@@ -181,7 +181,7 @@ def get_descriptor(dev, desc_size, desc_type, desc_index, wIndex = 0):
 
     return desc
 
-def set_descriptor(dev, desc, desc_type, desc_index, wIndex = None):
+def set_descriptor(dev, desc, desc_type, desc_index, wIndex = 0):
     r"""Update an existing descriptor or add a new one.
 
     dev is the Device object to which the request will be
