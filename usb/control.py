@@ -123,7 +123,7 @@ def clear_feature(dev, feature, recipient = None):
     The recipient can be None (on which the status will be queried
     from the device), an Interface or Endpoint descriptors.
     """
-    if feature == ENDPOINT_HALT:
+    if feature == ENDPOINT_HALT and isinstance(recipient, (core.Endpoint, int)):
         dev.clear_halt(recipient)
     else:
         bmRequestType, wIndex = _parse_recipient(recipient, util.CTRL_OUT)
